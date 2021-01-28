@@ -1,0 +1,45 @@
+<style>
+    body {
+        width: 680px;
+        /* text-align: center; */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    h3, h4, .btn {
+        text-align: center;
+    }
+</style>
+
+<div class="main">
+    <% if logged_in? %>
+        <h3>Welcome <%= current_user.username %></h3>
+        <br>
+        <br>
+        <h4>Thank You For Your Registration</h4>
+
+        <br>
+        <br>
+        <h4><a href="/">Click here </a> to proceed..</h4>
+
+        <br>
+        <br>
+</div>
+    <% else %>
+
+        <h2>Please Sign Up or Log In Here</h2>
+        <br>
+        <br>
+        <%= button_to "Log In", '/login', method: :get%>
+        <br>
+        <%= button_to "Sign Up", '/users/new', method: :get%>
+
+    <%end%>
+</div>
+
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+<style>
+    body {
+        width: 680px;
+        /* text-align: center; */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .post-meta {
+        background: #fff;
+        text-align: left;
+        font-weight: bold;
+        padding: 10px;
+        border: 1px solid #ddd;
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+            <% @posts.each do |p|%>
+                <div class="post-meta">
+                    <%= current_user.username %>
+                </div>
+                <div class="post-meta">
+                    <%= image_tag p.image, class: "img img-fluid" %>
+                <br>
+                <hr>
+                    <%= p.description %>
+                </div>
+                <br>
+                <br> 
+                
+            <% end %>
+            <a href="/posts/new"><button type="button" class="btn btn-primary">New Post</button></a>
+        </div>
+    </div>
+</div>

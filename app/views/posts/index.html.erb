@@ -1,0 +1,22 @@
+My Posts Here
+
+<section class="post">
+    <% @posts.each do |p|%>
+        <article>
+            <span><img src="<%= (url_for(p.image)) %>" alt=""></span>
+            <br>
+            <span><%= p.description %></span>
+
+            <div class="col-md-6"><a href="/posts/<%= p.id %>/edit">Edit Post</a></div>  
+        </article>
+
+         
+    <% end %>
+
+    <br>
+    <br>
+    <a href="/posts/new"><button type="button" class="btn btn-primary">New Post</button></a>
+   
+    
+</section>
+

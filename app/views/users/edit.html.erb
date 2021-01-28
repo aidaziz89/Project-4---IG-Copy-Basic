@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel=“stylesheet” href=“https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css”>
+
+    <style>
+    body {
+        width: 680px;
+        /* text-align: center; */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    </style>
+</head>
+<body>
+    <h1>Edit Your Profile Here..</h1>
+    <br>
+    <br>
+    <div class="form">
+
+
+        <%= form_tag "/users/#{@user.id}", method: "patch", multipart: true do %>
+
+            <%# <label for="">Profile Picture: </label>
+            <input type="text" name="photo" value="<%= @user.photo %>
+
+            <label for="">Email: </label>
+            <input type="email" class="form-control" name="email" value="<%= @user.email %>">
+            <br>
+            <br>
+            <label for="">Full Name: </label>
+            <input type="text" class="form-control" name="fullname" value=" <%= @user.fullname %>">
+            <br>
+            <br>
+            <label for="">Username </label>
+            <input type="text" class="form-control" name="username" value=" <%= @user.username %>">
+            <br>
+            <br>
+            <label for="">Password: </label>
+            <input type="password" class="form-control" name="password" value="<%= @user.password_digest %>">
+            <br>
+            <br>
+            <button class="btn btn-primary">Update Your Profile</button>
+            <a href="/"><button class="btn btn-primary">Back to Homepage</button> </a>
+        <% end %>
+    </div>
+</body>
+</html>
+
+
+
+
+
+

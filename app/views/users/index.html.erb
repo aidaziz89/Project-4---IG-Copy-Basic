@@ -1,0 +1,91 @@
+<style>
+
+body {
+    width: 680px;
+    /* text-align: center; */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* .d-flex {
+    width: 500px;
+    text-align: center;
+} */
+.col {
+    display: inline-block;                       /* establish flex container */
+    flex-wrap: wrap;                     /* enable flex items to wrap */
+    justify-content: space-evenly; 
+}
+
+.container {
+    margin: 10px;
+} 
+
+img {
+    display: inline-block;
+    width: 300px;
+    height: 350px;
+}
+
+.btn-post, .btn-delete {
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.post-meta {
+        background: #fff;
+        text-align: left;
+        font-weight: bold;
+        padding: 10px;
+        border: 1px solid #ddd;
+}
+</style>
+
+
+<div class="d-flex position-relative">
+    <div>
+        <div class="row">
+            <div class="col-md-6"> <h5 class="mt-0"><%= current_user.username %></h5></div>
+            <div class="col-md-6"><a href="/users/<%= current_user.id %>/edit">Edit Profile</a></div>
+        </div>
+        <div class="col-md-12">
+            <p>Bio
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas adipisci molestiae quisquam ipsum possimus voluptatum tempore, dolore perspiciatis dicta exercitationem optio placeat inventore quam consequatur a, ex in repellat magnam.
+            </p>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+</div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <% @posts.each do |p|%>
+                    <div class="post-meta">
+                        <a href="/posts/<%= p.id %>"><img src="<%= p.image %>" alt=""></a>
+                    <br>
+                    </div>
+                    <div class="btn-post">
+                        <a href="/posts/<%= p.id %>/edit"><button type="button" class="btn btn-primary">Edit Post</button></a>
+                    </div> 
+                    <div class="btn-delete">
+                        <%= button_to "Delete Post", "/posts/#{p.id}", method: :delete, data: { confirm: "Are You Sure?" } %>
+                    </div>
+                    <br>
+                    <br> 
+                    
+                <% end %>
+            </div>
+        </div>
+    </div>
+
+
+
+            
+
+        
+
+

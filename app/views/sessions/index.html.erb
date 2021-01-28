@@ -1,0 +1,14 @@
+<h1>Intagram Copy</h1>
+
+<% if logged_in? %>
+    <h1>You are Logged In, <%= current_user.username %></h1>
+
+    <%= button_to "Logout", '/logout', method: :delete%>
+
+    <a href="/"><button>Go back</button></a> 
+<% else %>
+
+    <%= button_to "Login", '/login', method: :get%>
+    <%= button_to "Sign Up", '/users/new', method: :get%>
+
+<%end%>

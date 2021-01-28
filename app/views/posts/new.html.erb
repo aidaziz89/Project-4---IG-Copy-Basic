@@ -1,0 +1,30 @@
+<style>
+    body {
+        width: 680px;
+        /* text-align: center; */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    h2, form {
+        text-align: center;
+    }
+</style>
+
+<h2>Create Your Post Here...</h2>
+
+<%= form_tag '/posts', method: 'POST' do%>
+
+    <label for="">Image: </label>
+    <br>
+    <input type="text" class="form-control" name="image">
+    <br>
+    <br>
+    <label for="">Description: </label><br>
+    <textarea name="description" id="" cols="56" rows="5"></textarea>
+    <br>
+    <br>
+    <button class="btn btn-primary">Submit</button>
+    <a href="/"><button class="btn btn-primary">Back to Homepage</button></a>
+
+<% end %>

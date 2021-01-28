@@ -1,0 +1,23 @@
+  
+
+<h2>Edit Your Post Here...</h2>
+<br>
+<br>
+<%= form_tag "/posts/#{@post.id}", method: 'patch' do%>
+
+    <label for="">Image: </label>
+    <br>
+    <input type="text" class="form-control" name="image" value="<%= @post.image %>">
+    <br>
+    <br>
+    <label for="">Description: </label><br>
+    <input type="text" class="form-control" name="description" class="caption" value="<%= @post.description %>">
+    <br>
+    <br>
+    <button class="btn btn-primary">Update Post</button>
+    <button class="btn btn-primary">Back To Homepage</button>
+
+<% end %>
+
+
+

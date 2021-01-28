@@ -1,0 +1,9 @@
+<%= form_tag "/comments/#{@comment.id}", method: 'POST' do%>
+
+    <label for="">Comment: </label><br>
+    <input type="text" name="comment">
+    <br>
+    <br>
+    <button>Submit</button>
+
+<% end %>

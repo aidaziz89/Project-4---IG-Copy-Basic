@@ -1,0 +1,28 @@
+
+<style>
+    body {
+        width: 680px;
+        /* text-align: center; */
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+<h1>Sign Up</h1>
+<%= form_for @user do |f|%>
+    <%# <%= f.label "Profile Photo"%><br>
+    <%#= f.text_field :photo %><br> 
+    <%= f.label :email%><br>
+    <%= f.text_field :email %><br>
+    <%= f.label :fullname%><br>
+    <%= f.text_field :fullname %><br>
+    <%= f.label :username%><br>
+    <%= f.text_field :username%><br>
+    <%= f.label :password%><br>
+    <%= f.password_field :password%><br>
+    <br>
+
+    <%# <a href="/welcome"><button>Sign Up</button></a> %>
+    <%= f.submit "Sign Up" %>
+<%end%>
+<br>
+<a href="/welcome"><button>Go Back</button> </a>
