@@ -9,4 +9,5 @@ This project is inspire with the Instagram app. It is a basic page that user can
 * Yarn
 * Postgresql
 * Bootstrap
+* Bcrypt
 
